@@ -1,10 +1,18 @@
-const {createApp} = Vue;
+const { createApp } = Vue;
 
 createApp({
     data() {
         return {
-            message: 'hola',
+            
         }
+    },
+
+    methods: {
+        getSquad() {
+            axios.get('server.php').then(res => {
+                console.log(res);
+            }); 
+        },
     },
 
 }).mount('#app');
